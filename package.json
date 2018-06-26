@@ -1,0 +1,21 @@
+{
+  "name": "crud_user",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-pug": "^1.0.0",
+    "http-errors": "^1.6.3",
+    "mongoose": "^5.1.6",
+    "morgan": "~1.9.0",
+    "passport": "^0.4.0",
+    "validator": "^10.4.0"
+  }
+}
