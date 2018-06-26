@@ -5,6 +5,7 @@ var router = express.Router();
 var homeController = require('../controllers/homeController');
 
 /* GET home page. */
+router.post('/', homeController.signup) 
 router.get('/', homeController.index);
 router.get('/signup', homeController.signup);
 module.exports = router;

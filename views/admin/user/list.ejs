@@ -16,7 +16,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN HEAD -->
 <head>
 <meta charset="utf-8"/>
-<title><%=title %></title>
+<title>Metronic | Data Tables - Managed Datatables</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="" name="description"/>
@@ -1370,33 +1370,40 @@ License: You must have a valid license purchased only from themeforest(the above
 								<th>
 									 Status
 								</th>
+								<th>
+									 roll
+								</th>
 							</tr>
 							</thead>
 							<tbody>
+							<% user.forEach(function (i){ %>
 							<tr class="odd gradeX">
 								<td>
 									<input type="checkbox" class="checkboxes" value="1"/>
 								</td>
 								<td>
-									 shuxer
+									 <%=i.lastname%>
 								</td>
 								<td>
-									<a href="mailto:shuxer@gmail.com">
-									shuxer@gmail.com </a>
+									<a href="mailto:l<%=i.email%>">
+									 <%=i.email%> </a>
 								</td>
 								<td>
-									 120
+									  <%=i.address%>
 								</td>
 								<td class="center">
-									 12 Jan 2012
+									 <%=i.Points%>
 								</td>
 								<td>
-									<span class="label label-sm label-success">
-									Approved </span>
+									<span class="label label-sm label-warning">
+									 <%=i.Status%> </span>
+								</td>
+								<td>
+									
+									 <%=i.roll%> 
 								</td>
 							</tr>
-							
-							
+							<% })%>
 							</tbody>
 							</table>
 						</div>

@@ -1,6 +1,14 @@
+var mongoose = require('../models/database');
+
+
 
 exports.index = function(req, res, next){
-		res.render('admin/user/list',{
-			title: 'Trang chủ',		
-		});		
-}
+
+	 mongoose.find().then(function(document){
+	 		res.render('admin/user/list',{
+			title: 'Trang chủ',
+			user: document
+		});
+	});
+	}
+
