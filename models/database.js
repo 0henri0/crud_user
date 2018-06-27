@@ -24,10 +24,11 @@ let userSchema = new mongoose.Schema({
   lastname: String,
   password: String,
   address:String,
-  urlanh:String,
   Points: Number,
   Status: String,
-  roll: Number
+  roll: Number,
+  urlanh:String,
+  created_on: String
 })
 
 

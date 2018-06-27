@@ -266,15 +266,15 @@ License: You must have a valid license purchased only from themeforest(the above
 
           <!-- BEGIN CONTENT -->
           <div class="col-md-9 col-sm-9">
-            <h1>Sửa thông tin tài khoản</h1>
+            <h1>thêm tài khoản</h1>
             <div class="content-form-page">
               <div class="row">
                 <div class="col-md-7 col-sm-7">
-                  <form class="form-horizontal" role="form" action="/sua/<%=id%>" method="POST">
+                  <form class="form-horizontal" role="form" action="/sua/<%=id%>" method="POST"  enctype="multipart/form-data">
                     <fieldset>
-                      <legend>admin sửa thông tin</legend>
+                      <legend>admin thêm thông tin</legend>
                       <div class="form-group">
-                        <label for="firstname" class="col-lg-4 control-label">First Name <span class="require">*</span></label>
+                        <label for="firstname" class="col-lg-4 control-label">First Name <span class="require" >*</span></label>
                         <div class="col-lg-8">
                           <input type="text" class="form-control" name="firstname">
                         </div>
@@ -282,37 +282,37 @@ License: You must have a valid license purchased only from themeforest(the above
                       <div class="form-group">
                         <label for="lastname" class="col-lg-4 control-label">Last Name <span class="require">*</span></label>
                         <div class="col-lg-8">
-                          <input type="text" class="form-control" name="lastname">
+                          <input type="text" class="form-control" name="lastname" >
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="email" class="col-lg-4 control-label">Email <span class="require">*</span></label>
                         <div class="col-lg-8">
-                          <input type="text" class="form-control" name="email">
+                          <input type="text" class="form-control" name="email" >
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="address" class="col-lg-4 control-label">address <span class="require">*</span></label>
                         <div class="col-lg-8">
-                          <input type="text" class="form-control" name="address">
+                          <input type="text" class="form-control" name="address" >
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="urlanh" class="col-lg-4 control-label">urlanh <span class="require">*</span></label>
                         <div class="col-lg-8">
-                          <input type="text" class="form-control" name="urlanh">
+                          <input type="file" multiple name="Images"  >
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="urlanh" class="col-lg-4 control-label">Status <span class="require">*</span></label>
                         <div class="col-lg-8">
-                          <input type="text" class="form-control" name="Status">
+                          <input type="text" class="form-control" name="Status" >
                         </div>
                       </div>
                        <div class="form-group">
                         <label for="urlanh" class="col-lg-4 control-label">Points <span class="require">*</span></label>
                         <div class="col-lg-8">
-                          <input type="text" class="form-control" name="Points">
+                          <input type="text" class="form-control" name="Points" >
                         </div>
                       </div>
                        <div class="form-group">
@@ -329,7 +329,7 @@ License: You must have a valid license purchased only from themeforest(the above
                       <div class="form-group">
                         <label for="password" class="col-lg-4 control-label">Password <span class="require">*</span></label>
                         <div class="col-lg-8">
-                          <input type="text" class="form-control" name="password">
+                          <input type="text" class="form-control" name="password" >
                         </div>
                       </div>
                       <!-- <div class="form-group">
