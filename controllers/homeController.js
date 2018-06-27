@@ -6,70 +6,50 @@ const bodyParser = require('body-parser')
 const urlencodedParser = bodyParser.urlencoded({ extended: true })
 router.use(bodyParser.urlencoded({ extended: true }))
 
-
-	
-	 
+//-----------------------------------------------------------
+//xử lý upload file
 var storage =   multer.diskStorage({
- destination: './public/Uploads/Images/',
-  filename: function (req, file, callback) {
-    callback(null, file.fieldname + '-' + Date.now()+".jpg");
-  }
-});
-
-// Init Upload
+ 					destination: './public/Uploads/Images/',
+  					filename: function (req, file, callback) {
+    				callback(null, file.fieldname + '-' + Date.now()+".jpg");
+ 					}
+				});
 const upload = multer({ storage : storage }).single('Images');
-
-
+//-----------------------------------------------------------
 exports.index = function(req, res, next){
-			res.render('display/homepage',{
-			title: 'Trang chủ',
-			
-		});
+	res.render('display/homepage',{
+		title: 'Trang chủ',	
+	});
 }
-
 exports.signup = function(req, res, next){
-			res.render('display/signup',{
-			title: 'đăng ký',
-			
-		});
+	res.render('display/signup',{
+	title: 'đăng ký',	
+	});
 }
-
-
-
 exports.them = function(req, res, next){
-
-
 	mongoose.find().then(function(document){
 	 		res.render('admin/user/list',{
-			title: 'Trang chủ',
-			user: document
-		});
-	});
-			
+				title: 'Trang chủ',
+				user: document
+			});
+	});			
 }
 exports.xoa = function(req, res, next){
-	 var id = req.params.id+ "";
-	
+	var id = req.params.id+ "";
     mongoose.findByIdAndRemove(id, function (err) {});
-    console.log(id)
 	res.redirect('../admin');
-	
 }
 exports.getsua = function(req, res, next){
-	
-	 res.render('admin/user/edit',{
-			title: 'đăng ký',
-			id : req.params.id
-		});
-	
+	res.render('admin/user/edit',{
+		title: 'đăng ký',
+		id : req.params.id
+	});
 }
-
 exports.postsua = function(req, res, next){
-	var id = req.params.id+ "";
-	 upload(req, res, function(err){
+	upload(req, res, function(err){
 //--------------------------------------------------------------------------
 	 		//tạo 1 chuỗi string để covert sang json trong đó chứa các dữ liệu cần sửa 
-            var jsontxt="";
+            var jsontxt="";//chuỗi string
 			if(req.body.email){
 				jsontxt = jsontxt+ '\"'+"email\""+ ':'+ '\"'+req.body.email+ '\"'
 			}
@@ -114,48 +94,39 @@ exports.postsua = function(req, res, next){
 			//tìm id và sửa bằng file json
             mongoose.findByIdAndUpdate( req.params.id ,obj,{new: true}).then(console.log(123));
 				res.redirect('../admin');
-        //     }
-         });
+    });
 };
-
-
 exports.getthem = function(req, res, next){
-	
 	 res.render('admin/user/add',{
 			title: 'thêm tài khoản',
 		});
-	
 }
-
 exports.postthem = function(req, res, next){
-
-	  upload(req, res, function(err){
-	  		console.log(req.file.filename)
-                const email = req.body.email;
-                const lastname = req.body.lastname;
-                const firstname = req.body.firstname;
-                const password = req.body.password;
-                const address = req.body.address;
-                const Points = req.body.Points;
-                const Status =  req.body.Status;
-                const roll = req.body.roll;
-                const urlanh = req.file.filename;
-                const date = new Date()
-               const time = date.toLocaleDateString();
-                mongoose.create({
-	 				email : email,
-	 				firstname : firstname,
-				 	address : address,
-				 	lastname : lastname,
-				 	password : password,
-				 	address : address,
-				 	Points : Points,
-				 	Status : Status,
-				 	roll : roll,
-				 	urlanh: urlanh,
-				 	created_on : time }).then(console.log("thêm thành công"))
-				res.redirect('../admin');
-        //     }
-         });
-    };
+	upload(req, res, function(err){
+        const email = req.body.email;
+        const lastname = req.body.lastname;
+        const firstname = req.body.firstname;
+        const password = req.body.password;
+        const address = req.body.address;
+        const Points = req.body.Points;
+        const Status =  req.body.Status;
+        const roll = req.body.roll;
+        const urlanh = req.file.filename;
+        const date = new Date()
+        const time = date.toLocaleDateString();
+        mongoose.create({
+			email : email,
+			firstname : firstname,
+		 	address : address,
+		 	lastname : lastname,
+		 	password : password,
+		 	address : address,
+		 	Points : Points,
+		 	Status : Status,
+		 	roll : roll,
+		 	urlanh: urlanh,
+		 	created_on : time }).then(console.log("thêm thành công"))
+			res.redirect('../admin');
+    });
+};
 

@@ -1,28 +1,24 @@
-# BKFA.JS
-## Các bước cài đặt
-1. npm install express-generator -g
-2. express --view=pug BkfaJS
-3. npm install
-4. npm start để chạy thử
-5.Cấu hình thư mục dự án:
-	+ Controllers
-	+ Models
-	+ Config
-	+ Templates (muốn tự cấu hình view thì tạo, không thì thôi)
-	+ server.js (không sử dụng /bin/www)
-6. Cấu hình template cơ bản
-	- Cài đặt một số các modules:
-		+ nodemon: tự động khởi động lại server mỗi lần lưu thay đổi
-		+ pug: template engine cho phần giao diện
-		+ mongoose: dùng thao tác với cơ sở dữ liệu mongodb
-	- chú ý 2 tùy chọn đó là --save và -g:
-		+ --save: là các modules được cài đặt và lưu vào dự án đồng thời lưu vào file package.json
-		+ --g: lưu module vào môi trường của máy để dùng chung cho các dự án khác.
-	-> npm install nodemon --g
-	-> npm install express-pug --save
-	(express-pug là cầu nối giữa pug và express, cho phép express sử dụng được các thư viện của pug. Khi cài express-pug thì thư viện pug được cài theo.﻿)
-	-> npm install mongoose --save
-	- Copy /bin/www vaof server.js và đổi ../app thành ./app và node ./bin/www trong package.json thành node ./server.js
-7. Cài đặt một số modules thông dụng
-	+ npm install body-parser --save
-8. Cấu hình kết nối router, controller, models
+1. Xây dựng mô hình mvc gồm model view controller và router trong đó:
+	- View chứa các view của admin và người dùng.
+	- Controller xử lý logic và render ra view cho người dùng.
+	- Model kết nối database mongoDB.
+	- Routes điều hướng vào controller tương ứng.
+2. app sử dụng:
+ 	- expressJS để tạo mvc sau đó update để giống mô hình mvc thật.
+ 	- view engine : ejs để render ra view.
+ 	- mongoose validator : kết nối DB mongo và kiểm tra dữ liệu đầu vào.
+ 	- body-parser : get dữ liệu từ form người dùng.
+	- passport: xác thực, midlderwave tài khoản.
+3. các bước đã hoàn thành :
+	- Xây dựng lại mô hình mvc.
+ 	- Hiển thị view theo routes và controller.
+ 	- Cài đặt và kết nối DB mongo.
+	- get dữ liệu đổ vào trang admin.
+	- crud dữ liệu.
+ 	- updload hình ảnh.
+4. các bước tiếp theo :
+	- làm đăng nhập người dùng, admin.
+
+####
+localost:3000/admin: danh sách quản lý user
+localost:3000/admin/them: admin thêm user	

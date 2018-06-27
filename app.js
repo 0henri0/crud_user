@@ -5,10 +5,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
-
 var settings = require('./config/settings');
 var database = require('./config/database');
-
 var adminRouter = require('./routes/admin');
 var usersRouter = require('./routes/users');
 var homeRouter = require('./routes/home');
