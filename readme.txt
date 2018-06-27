@@ -15,6 +15,10 @@
  	- Cài đặt và kết nối DB mongo.
 	- get dữ liệu đổ vào trang admin.
 	- crud dữ liệu.
+ 	- updload hình ảnh.
 4. các bước tiếp theo :
 	- làm đăng nhập người dùng, admin.
-	- updload hình ảnh.
+
+####
+localost:3000/admin: danh sách quản lý user
+localost:3000/admin/them: admin thêm user	
