@@ -20,5 +20,5 @@
 	- làm đăng nhập người dùng, admin.
 
 ####
-localost:3000/admin: danh sách quản lý user
-localost:3000/admin/them: admin thêm user	
+localost:3000/admin: danh sách quản lý user.
+localost:3000/admin/them: admin thêm user.	
