@@ -13,8 +13,8 @@
 	- Xây dựng lại mô hình mvc.
  	- Hiển thị view theo routes và controller.
  	- Cài đặt và kết nối DB mongo.
-4. các bước tiếp theo :
- 	- get dữ liệu đổ vào trang admin.
+	- get dữ liệu đổ vào trang admin.
 	- crud dữ liệu.
+4. các bước tiếp theo :
 	- làm đăng nhập người dùng, admin.
 	- updload hình ảnh.
